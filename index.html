@@ -15,11 +15,11 @@
         <button onclick="checkPassword()">Submit</button>
         <p id="message"></p>
     </div>
-    
+
     <script>
         let attempts = 0;
-        let correctHash = "ccdf58ebe980bf04f3441fb6fa9504c3"; 
-        
+        let correctHash = "ccdf58ebe980bf04f3441fb6fa9504c3";
+
         function checkPassword() {
             let input = document.getElementById("password").value.trim();
             let inputHash = CryptoJS.MD5(input).toString();
