@@ -1,44 +1,141 @@
+/* General Styling */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #ffe6eb;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f8e8ec;
-        text-align: center;
-        margin: 0;
-        padding: 0;
+/* Container for the puzzle */
+.container {
+    margin-top: 10%;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    border: 2px solid #ff4d6d;
+}
+
+/* Input field and button styling */
+input {
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #ff4d6d;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Submit button */
+button {
+    padding: 12px 25px;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4d6d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #d63354;
+    transform: scale(1.05);
+}
+
+/* Message styling */
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+/* Love Letter Page */
+.love-letter {
+    background: url('https://source.unsplash.com/1600x900/?romantic,valentines') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.letter-container {
+    margin-top: 10%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 15px rgba(255, 50, 70, 0.8);
+}
+
+/* Letter Styling */
+.love-text {
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: 'Dancing Script', cursive;
+}
+
+.signature {
+    font-style: italic;
+    font-size: 22px;
+    margin-top: 20px;
+    color: #ffd700;
+}
+
+/* Floating Hearts Animation */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
+    50% {
+        transform: translateY(-100px) scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-200px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Heart Element */
+.heart {
+    position: absolute;
+    bottom: -10%;
+    width: 25px;
+    height: 25px;
+    background-color: #ff4d6d;
+    clip-path: polygon(50% 15%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0 35%);
+    animation: floatHearts 4s infinite linear;
+}
+
+/* Generate multiple hearts */
+.heart:nth-child(1) { left: 10%; animation-duration: 5s; }
+.heart:nth-child(2) { left: 20%; animation-duration: 6s; }
+.heart:nth-child(3) { left: 30%; animation-duration: 4s; }
+.heart:nth-child(4) { left: 50%; animation-duration: 5.5s; }
+.heart:nth-child(5) { left: 70%; animation-duration: 6.2s; }
+.heart:nth-child(6) { left: 90%; animation-duration: 4.8s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .container {
-        margin-top: 15%;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    input, button {
-        padding: 10px;
-        margin-top: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-    .love-letter {
-        background: url('https://source.unsplash.com/1600x900/?love,romance') no-repeat center center fixed;
-        background-size: cover;
-        color: white;
+        width: 80%;
     }
     .letter-container {
-        margin-top: 10%;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 80%;
     }
-    .signature {
-        font-style: italic;
-        font-size: 18px;
-        margin-top: 20px;
-    }
+}
