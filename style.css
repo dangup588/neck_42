@@ -143,11 +143,30 @@ h1 {
 
 .heart {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-color: #d63354;
-    clip-path: polygon(50% 15%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0 35%);
+    transform: rotate(45deg);
     animation: floatHearts 6s infinite linear;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #d63354;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: 15px;
+    top: 0;
+}
+
+.heart:after {
+    left: 0;
+    top: 15px;
 }
 
 .heart:nth-child(1) { left: 10%; animation-duration: 7s; }
@@ -160,6 +179,7 @@ h1 {
 .heart:nth-child(8) { left: 40%; animation-duration: 7s; }
 .heart:nth-child(9) { left: 60%; animation-duration: 9s; }
 .heart:nth-child(10) { left: 80%; animation-duration: 6s; }
+
 
 /* Back Button */
 .back-button {
