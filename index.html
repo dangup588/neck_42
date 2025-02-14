@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>What game was I playing when I fell in love with you?</h1>
+        <p class="hint">Capitalize the first letter of every word delimited by a space.</p>
+        <input type="text" id="password" placeholder="Enter answer">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="message"></p>
+    </div>
+    
+    <script>
+        let attempts = 0;
+        let correctHash = "4fa9653d4b45c33cdb4d24a93d67398d"; // MD5 hash of "Raft"
+        
+        function checkPassword() {
+            let input = document.getElementById("password").value.trim();
+            let inputHash = CryptoJS.MD5(input).toString();
+            
+            if (inputHash === correctHash) {
+                window.location.href = "love-letter.html";
+            } else {
+                attempts++;
+                if (attempts === 1) {
+                    document.getElementById("message").innerText = "Incorrect. 2 attempts remaining before a cooldown.";
+                } else if (attempts === 2) {
+                    document.getElementById("message").innerText = "Incorrect. 1 attempt remaining.";
+                } else {
+                    document.getElementById("message").innerText = "Too many attempts! Try again in 1 minute.";
+                    document.querySelector("button").disabled = true;
+                    setTimeout(() => {
+                        document.querySelector("button").disabled = false;
+                        attempts = 0;
+                        document.getElementById("message").innerText = "";
+                    }, 60000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
