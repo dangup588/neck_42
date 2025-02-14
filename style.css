@@ -1,18 +1,16 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: 'Playfair Display', serif;
-    background-color: #ffe6eb;
-    text-align: center;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-/* Container for the puzzle */
+/* Index Page Styles */
 .container {
     margin-top: 10%;
     padding: 30px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     width: 40%;
     margin-left: auto;
@@ -21,9 +19,9 @@ body {
     position: relative;
     z-index: 2;
     border: 2px solid #ff4d6d;
+    backdrop-filter: blur(10px);
 }
 
-/* Input field and button styling */
 input {
     padding: 12px;
     margin-top: 15px;
@@ -35,9 +33,14 @@ input {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    transition: border-color 0.3s ease;
 }
 
-/* Submit button */
+input:focus {
+    border-color: #d63354;
+    outline: none;
+}
+
 button {
     padding: 12px 25px;
     margin-top: 15px;
@@ -56,36 +59,48 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Message styling */
 #message {
     margin-top: 10px;
     font-weight: bold;
     color: #ff4d6d;
 }
 
-/* Love Letter Page */
+/* Love Letter Page Styles */
 .love-letter {
-    background: url('https://source.unsplash.com/1600x900/?romantic,valentines') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .letter-container {
-    margin-top: 10%;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 4px 15px rgba(255, 50, 70, 0.8);
+    box-shadow: 0px 4px 30px rgba(255, 50, 70, 0.8);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Letter Styling */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .love-text {
     font-size: 20px;
     line-height: 1.8;
     font-family: 'Dancing Script', cursive;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .signature {
@@ -93,25 +108,16 @@ button:hover {
     font-size: 22px;
     margin-top: 20px;
     color: #ffd700;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 /* Floating Hearts Animation */
 @keyframes floatHearts {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-100px) scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-200px) scale(1.2);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-100px) scale(1.1); opacity: 0.7; }
+    100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
 }
 
-/* Heart Element */
 .heart {
     position: absolute;
     bottom: -10%;
@@ -122,7 +128,6 @@ button:hover {
     animation: floatHearts 4s infinite linear;
 }
 
-/* Generate multiple hearts */
 .heart:nth-child(1) { left: 10%; animation-duration: 5s; }
 .heart:nth-child(2) { left: 20%; animation-duration: 6s; }
 .heart:nth-child(3) { left: 30%; animation-duration: 4s; }
@@ -130,12 +135,30 @@ button:hover {
 .heart:nth-child(5) { left: 70%; animation-duration: 6.2s; }
 .heart:nth-child(6) { left: 90%; animation-duration: 4.8s; }
 
+/* Back Button */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4d6d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background-color: #d63354;
+    transform: scale(1.05);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        width: 80%;
-    }
-    .letter-container {
+    .container, .letter-container {
         width: 80%;
     }
 }
