@@ -1,33 +1,46 @@
 /* General Styles */
 body {
-    font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Cormorant Garamond', serif;
+    color: #4a4a4a;
 }
 
 /* Index Page Styles */
 .container {
     margin-top: 10%;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
-    border: 2px solid #ff4d6d;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+.hint {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 30px;
 }
 
 input {
     padding: 12px;
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 8px;
-    border: 2px solid #ff4d6d;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 80%;
     display: block;
     margin-left: auto;
@@ -43,47 +56,49 @@ input:focus {
 
 button {
     padding: 12px 25px;
-    margin-top: 15px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 1rem;
     border-radius: 8px;
     border: none;
-    background-color: #ff4d6d;
+    background-color: #d63354;
     color: white;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background-color: #d63354;
+    background-color: #b52a48;
     transform: scale(1.05);
 }
 
 #message {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ff4d6d;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #d63354;
 }
 
 /* Love Letter Page Styles */
 .love-letter {
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color: white;
+    background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+    color: #4a4a4a;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 .letter-container {
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     width: 50%;
-    box-shadow: 0px 4px 30px rgba(255, 50, 70, 0.8);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     animation: fadeIn 2s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeIn {
@@ -91,11 +106,19 @@ button:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
 .love-text {
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 1.8;
     font-family: 'Dancing Script', cursive;
     animation: slideIn 1.5s ease-in-out;
+    color: #4a4a4a;
 }
 
 @keyframes slideIn {
@@ -105,9 +128,9 @@ button:hover {
 
 .signature {
     font-style: italic;
-    font-size: 22px;
-    margin-top: 20px;
-    color: #ffd700;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #d63354;
     animation: fadeIn 2.5s ease-in-out;
 }
 
@@ -120,39 +143,42 @@ button:hover {
 
 .heart {
     position: absolute;
-    bottom: -10%;
-    width: 25px;
-    height: 25px;
-    background-color: #ff4d6d;
+    width: 20px;
+    height: 20px;
+    background-color: #d63354;
     clip-path: polygon(50% 15%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0 35%);
-    animation: floatHearts 4s infinite linear;
+    animation: floatHearts 6s infinite linear;
 }
 
-.heart:nth-child(1) { left: 10%; animation-duration: 5s; }
+.heart:nth-child(1) { left: 10%; animation-duration: 7s; }
 .heart:nth-child(2) { left: 20%; animation-duration: 6s; }
-.heart:nth-child(3) { left: 30%; animation-duration: 4s; }
-.heart:nth-child(4) { left: 50%; animation-duration: 5.5s; }
-.heart:nth-child(5) { left: 70%; animation-duration: 6.2s; }
-.heart:nth-child(6) { left: 90%; animation-duration: 4.8s; }
+.heart:nth-child(3) { left: 30%; animation-duration: 8s; }
+.heart:nth-child(4) { left: 50%; animation-duration: 9s; }
+.heart:nth-child(5) { left: 70%; animation-duration: 7s; }
+.heart:nth-child(6) { left: 90%; animation-duration: 6s; }
+.heart:nth-child(7) { left: 15%; animation-duration: 8s; }
+.heart:nth-child(8) { left: 40%; animation-duration: 7s; }
+.heart:nth-child(9) { left: 60%; animation-duration: 9s; }
+.heart:nth-child(10) { left: 80%; animation-duration: 6s; }
 
 /* Back Button */
 .back-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     padding: 12px 25px;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 8px;
     border: none;
-    background-color: #ff4d6d;
+    background-color: #d63354;
     color: white;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .back-button:hover {
-    background-color: #d63354;
+    background-color: #b52a48;
     transform: scale(1.05);
 }
 
