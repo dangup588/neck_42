@@ -18,14 +18,12 @@
     
     <script>
         let attempts = 0;
-        let correctHash = "32ca7617c1e2c02013a7449b20d03a56"; // MD5 hash of "Raft"
+        let correctHash = "ccdf58ebe980bf04f3441fb6fa9504c3"; 
         
         function checkPassword() {
             let input = document.getElementById("password").value.trim();
             let inputHash = CryptoJS.MD5(input).toString();
-            console.log("User input:", input);
-console.log("Generated hash:", inputHash);
-console.log("Expected hash:", correctHash);
+
             if (inputHash === correctHash) {
                 window.location.href = "love-letter.html";
             } else {
