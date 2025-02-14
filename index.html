@@ -23,7 +23,9 @@
         function checkPassword() {
             let input = document.getElementById("password").value.trim();
             let inputHash = CryptoJS.MD5(input).toString();
-            
+            console.log("User input:", input);
+console.log("Generated hash:", inputHash);
+console.log("Expected hash:", correctHash);
             if (inputHash === correctHash) {
                 window.location.href = "love-letter.html";
             } else {
